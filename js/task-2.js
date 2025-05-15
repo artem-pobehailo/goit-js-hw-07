@@ -27,19 +27,18 @@ const images = [
 
 const gallery = document.querySelector('.gallery')
 const galleryImg = images.map(({ url, alt }) => {
-  return `<li><img src="${url}" alt="${alt}" width = '100%' height = '2000px'></li>`;
+  return `
+  <li style="width: calc((100% - 48px) / 3); ">
+  <img src="${url}" alt="${alt}" width = '360px' height = '300px'></li>`;
 }).join('');
 
 
 
 gallery.insertAdjacentHTML('beforeend', galleryImg);
-
-// const allImages = document.querySelectorAll('.gallery img');
-
-
-// allImages.forEach(img => {
-//   img.style.width = '100%';      
-//   img.style.height = '2000px';   
-//   img.style.objectFit = 'cover';
-// });
+gallery.style.display = 'flex';
+gallery.style.flexWrap = 'wrap';
+gallery.style.gap = '24px';
+gallery.style.listStyle = 'none'; 
+gallery.style.padding = '100px 156px'; 
+gallery.style.margin = '0';  
 
